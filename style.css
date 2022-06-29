@@ -1,0 +1,134 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Courier+Prime&display=swap');
+
+
+html {
+  background-color: 010101;
+
+}
+body {
+  font-family: 'Roboto';
+  background-color: #3a3a3a;
+}
+header {
+  background-color: #859db6;
+  padding: 1%;
+  margin-bottom: 10px;
+  text-align: center;
+  border: 1px solid white;
+  
+}
+
+nav ul{
+  display: flex;
+  flex-flow: row nowrap;
+  text-align: center;
+  justify-content: space-around;
+}
+
+article, section {
+  border: 2px solid black;
+  padding: 1%;
+  max-height: 100%;
+}
+h1 {
+  text-align: center;
+}
+
+h2 {
+  color: 010101;
+}
+
+p {
+  color: black;
+}
+
+ul {
+  border: 2px solid black;
+}
+
+ol {
+  border: 2px solid green;
+}
+
+ol, ul {
+  padding: 5px 20px;
+  border-radius: 4px;
+}
+footer {
+  font-family: 'Courier Prime';
+  background-color: #9db685;
+  padding: 2%;
+  text-align: center;
+}
+header, footer, #aside1, #aside2, main, nav {
+padding: 1%;
+border: 1px solid white;
+
+
+}
+
+strong {
+  color: red;
+}
+
+em {
+  color: orange;
+}
+
+header {grid-area: heady; background: #859db6}
+nav {grid-area: navvy; }
+main {grid-area: mainy;  max-height: 100%;}
+#aside1 {grid-area: aside1; background-color: #b6859d; padding: 1%;}
+#aside2 {grid-area: aside2; background-color: #b6859d; padding:1%;}
+footer {grid-area: footy; }
+
+.container { 
+  background-color: #859db6;  padding: 1%;
+ 
+  display: grid;
+  grid-template-columns:
+   1fr       2fr       1fr;
+  grid-template-areas:
+  "heady     heady     heady"
+  "navvy     navvy     navvy"
+  "aside1    mainy     aside2"
+  "aside1    mainy     aside2"
+  "aside1    mainy     aside2"
+  "footy     footy     footy";
+}
+
+@media screen
+  and (min-width: 641px)
+  and (max-width: 900px)  {
+.container {
+grid-template-columns:
+   1fr 1fr;
+grid-template-areas:
+  "heady heady"
+  "navvy navvy"
+  "mainy mainy"
+  "aside1 aside2"
+  "footy footy";
+}
+}
+
+
+@media screen
+  and (max-width: 640px)  {
+.container {
+grid-template-columns:
+   1fr;
+grid-template-areas:
+  "heady"
+  "mainy"
+  "aside1"
+  "aside2"
+  "navvy"
+  "footy";
+}
+nav ul {
+    flex-flow: column nowrap;
+    text-align: center;
+  }
+}
